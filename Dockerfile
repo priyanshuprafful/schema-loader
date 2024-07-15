@@ -5,7 +5,7 @@ RUN             sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault
 RUN             yum update -y
 RUN             yum install epel-release -y
 COPY            mongo.repo /etc/yum.repos.d/mongo.repo
-RUN             yum install git mysql mongodb-org-shell -y
+RUN             yum install unzip git mysql mongodb-org-shell -y
 RUN             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install
 COPY            run.sh /
 ENTRYPOINT      [ "bash", "/run.sh" ]
