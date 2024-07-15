@@ -1,2 +1,10 @@
-echo First Argument -  $1
-echo Second Argument = $2
+case $1 in
+  mongo)
+    ;;
+  mysql)
+    ;;
+  *)
+    echo Schema loaded supported only for mongo and mysql
+    exit 1
+    ;;
+esac
